@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+        .error { color: red; }
+        .normal { color: green; }
+    </style>
+</head>
+<body>
+    <div>
+        <p> First paragraph </p>
+    </div>
+    <p> Third paragraph </p>
+    <p> Fourth paragraph </p>
+    <h1> </h1>
+    <h3> </h3>
+    <label> D3 </label> <input type="checkbox" />
+    <label> jQuery </label> <input type="checkbox" />
+    <div class="myclass"> This is a mylass div </div>
+    <div id="myid"> This is a myid div </div>
+
+    <script>
+        // insert()
+        // text()
+        d3.select("div").insert("p").text("Second paragraph");
+
+        // append()
+        d3.select("body").append("p").text("Fifth paragraph");
+
+        // remove()
+        d3.select("h1").remove();
+
+        // html()
+        d3.select("h3").html("<span> Created span tag </span>");
+
+        // attr()
+        d3.select(".myclass").attr("class", "error");
+
+        // property()
+        d3.select("input").property("checked", true);
+
+        // style()
+        d3.select("label").style("color", "blue")
+
+        // classed()
+        d3.select("#myid").classed("normal", true);
+
+    </script>
+</body>
+</html>

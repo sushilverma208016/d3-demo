@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+
+    <div> Error: This is dummy error </div>
+    <div> Warning:This is dummy warning </div>
+
+    <script>
+        // functions of data
+        var data = [1, 2, 3];
+        var paragraph = d3.select("body")
+                .selectAll("p")
+                .data(data)
+                .text(function (d, i) {
+                    console.log("d: " + d);
+                    console.log("i: " + i);
+                    console.log("this: " + this);
+                    return d;
+                });
+        
+        // dynamic property
+        d3.selectAll("div").style("color", function(d, i) {
+                var text = this.innerText;
+                if (text.indexOf("Error") >= 0) {
+                    return "red";
+                } else if (text.indexOf("Warning") >= 0) {
+                    return "darkkhaki";
+                }
+        });
+    </script>
+</body>
+</html>

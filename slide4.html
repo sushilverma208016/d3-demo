@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+        .myclass{
+            color:'red'
+        }
+    </style>
+</head>
+<body>
+    <p> First paragraph </p>
+    <p> Second paragraph </p>
+    <h1> First Heading </h1>
+    <h1> Second Heading </h1>
+    <p id="p3"> Third paragraph </p>
+    <p class="myclass "> Fourth paragraph </p>
+
+    <table>
+        <tr> <td> One </td> <td> Two </td> </tr>
+        <tr> <td> Three </td> <td> Four </td> </tr>
+    </table>
+
+    <script>
+        // select by tag
+        d3.select("p").style("color", "green");
+
+        // selectAll by tag
+        d3.selectAll("h1").style("color", "blue");
+
+        // select by id
+        d3.select("#p3").style("color", "pink");
+
+        // selectAll by class
+        d3.selectAll(".myclass ").style('color','orange');
+
+        // nesting of select and selectAll
+        d3.select("tr").selectAll("td").style('background-color','yellow');
+    </script>
+</body>
+</html>
